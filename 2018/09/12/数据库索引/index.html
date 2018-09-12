@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="sometimes code， sometimes photograph">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        数据库索引 - CodingHJ的博客 | CodingHJ&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> sometimes code， sometimes photograph </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>HJ</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#数据库索引到底是什么，是怎样工作的？"><span class="toc-text">数据库索引到底是什么，是怎样工作的？</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#如果表中没有所以会发生什么？"><span class="toc-text">如果表中没有所以会发生什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库索引是怎样提升性能的？"><span class="toc-text">数据库索引是怎样提升性能的？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是索引？"><span class="toc-text">什么是索引？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么样的数据结构可以作为索引？"><span class="toc-text">什么样的数据结构可以作为索引？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#哈希表索引是怎么工作的？"><span class="toc-text">哈希表索引是怎么工作的？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#哈希索引的缺点"><span class="toc-text">哈希索引的缺点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#还有什么其他类型的索引？"><span class="toc-text">还有什么其他类型的索引？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#索引是怎么提升性能的？"><span class="toc-text">索引是怎么提升性能的？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库索引里究竟存的是什么？"><span class="toc-text">数据库索引里究竟存的是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#索引存储了指向表中某一行的指针"><span class="toc-text">索引存储了指向表中某一行的指针</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库怎么知道什么时候使用索引？"><span class="toc-text">数据库怎么知道什么时候使用索引？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#你能强制数据库使用索引吗？"><span class="toc-text">你能强制数据库使用索引吗？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何在使用SQL创建索引："><span class="toc-text">如何在使用SQL创建索引：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何创建联合索引"><span class="toc-text">如何创建联合索引</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#把数据库索引类比成什么比较好呢"><span class="toc-text">把数据库索引类比成什么比较好呢?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用数据库索引会有什么代价？"><span class="toc-text">使用数据库索引会有什么代价？</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> sometimes code， sometimes photograph </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        数据库索引
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2018-09-12 10:23:42</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#数据库 索引" title="数据库 索引">数据库 索引</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h1 id="数据库索引到底是什么，是怎样工作的？"><a href="#数据库索引到底是什么，是怎样工作的？" class="headerlink" title="数据库索引到底是什么，是怎样工作的？"></a>数据库索引到底是什么，是怎样工作的？</h1><p>我们通过一个简单的例子来开始教程，解释为什么我们需要数据库索引。假设我们有一个数据库表 Employee， 这个表有三个字段（列）分别是 Employee_Name、Employee_Age 和Employee_Address。假设表Employee 有上千行数据。</p>
+<p>现在假设我们要从这个表中查找出所有名字是‘Jesus’的雇员信息。我们决定使用下面的查询语句：<br><figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> Employee </span><br><span class="line"><span class="keyword">WHERE</span> Employee_Name = <span class="string">'Jesus'</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="如果表中没有所以会发生什么？"><a href="#如果表中没有所以会发生什么？" class="headerlink" title="如果表中没有所以会发生什么？"></a>如果表中没有所以会发生什么？</h2><p>一旦我们运行这个查询，在查找名字为Jesus的雇员的过程中，究竟会发生什么？数据库不得不Employee表中的每一行并确定雇员的名字（Employee_Name）是否为 ‘Jesus’。由于我们想要得到每一个名字为Jesus的雇员信息，在查询到第一个符合条件的行后，不能停止查询，因为可能还有其他符合条件的行。所以，必须一行一行的查找直到最后一行-这就意味数据库不得不检查上千行数据才能找到所以名字为Jesus的雇员。这就是所谓的全表扫描。</p>
+<h2 id="数据库索引是怎样提升性能的？"><a href="#数据库索引是怎样提升性能的？" class="headerlink" title="数据库索引是怎样提升性能的？"></a>数据库索引是怎样提升性能的？</h2><p>你可能会想为如此简单的事情做全表扫描效率欠佳-数据库是不是应该更聪明一点呢？这就像用人眼从头到尾浏览整张表-很慢也不优雅（原文：not at all sleek，不知如何翻译才好）。但是，你可以能根据文章标题已经猜到，这就是索引派上用场的时候。使用索引的全部意义就是通过缩小一张表中需要查询的记录/行的数目来加快搜索的速度。</p>
+<h2 id="什么是索引？"><a href="#什么是索引？" class="headerlink" title="什么是索引？"></a>什么是索引？</h2><p>一个索引是存储的表中一个特定列的值数据结构（最常见的是B-Tree）。索引是在表的列上创建。所以，要记住的关键点是索引包含一个表中列的值，并且这些值存储在一个数据结构中。请记住记住这一点：索引是一种数据结构 。</p>
+<h2 id="什么样的数据结构可以作为索引？"><a href="#什么样的数据结构可以作为索引？" class="headerlink" title="什么样的数据结构可以作为索引？"></a>什么样的数据结构可以作为索引？</h2><p>B-Tree 是最常用的用于索引的数据结构。因为它们是时间复杂度低， 查找、删除、插入操作都可以可以在对数时间内完成。另外一个重要原因存储在B-Tree中的数据是有序的。数据库管理系统（RDBMS）通常决定索引应该用哪些数据结构。但是，在某些情况下，你在创建索引时可以指定索引要使用的数据结构。</p>
+<h2 id="哈希表索引是怎么工作的？"><a href="#哈希表索引是怎么工作的？" class="headerlink" title="哈希表索引是怎么工作的？"></a>哈希表索引是怎么工作的？</h2><p>哈希表是另外一种你可能看到用作索引的数据结构-这些索引通常被称为哈希索引。使用哈希索引的原因是，在寻找值时哈希表效率极高。所以，如果使用哈希索引，对于比较字符串是否相等的查询能够极快的检索出的值。例如之前我们讨论过的这个查询(SELECT * FROM Employee WHERE Employee_Name = ‘Jesus’) 就可以受益于创建在Employee_Name 列上的哈希索引。哈系索引的工作方式是将列的值作为索引的键值（key），和键值相对应实际的值（value）是指向该表中相应行的指针。因为哈希表基本上可以看作是关联数组，一个典型的数据项就像“Jesus =&gt; 0x28939″，而0x28939是对内存中表中包含Jesus这一行的引用。在哈系索引的中查询一个像“Jesus”这样的值，并得到对应行的在内存中的引用，明显要比扫描全表获得值为“Jesus”的行的方式快很多。</p>
+<h2 id="哈希索引的缺点"><a href="#哈希索引的缺点" class="headerlink" title="哈希索引的缺点"></a>哈希索引的缺点</h2><p>哈希表是无顺的数据结构，对于很多类型的查询语句哈希索引都无能为力。举例来说，假如你想要找出所有小于40岁的员工。你怎么使用使用哈希索引进行查询？这不可行，因为哈希表只适合查询键值对-也就是说查询相等的查询（例：like “WHERE name = ‘Jesus’）。哈希表的键值映射也暗示其键的存储是无序的。这就是为什么哈希索引通常不是数据库索引的默认数据结构-因为在作为索引的数据结构时，其不像B-Tree那么灵活</p>
+<h2 id="还有什么其他类型的索引？"><a href="#还有什么其他类型的索引？" class="headerlink" title="还有什么其他类型的索引？"></a>还有什么其他类型的索引？</h2><p>使用R-Tree作为数据结构的索引通常用来为空间问题提供帮助。例如，一个查询要求“查询出所有距离我两公里之内的星巴克”，如果数据库表使用R- Tree索引，这类查询的效率将会提高。<br>另一种索引是位图索引（bitmap index）， 这类索引适合放在包含布尔值(true 和 false)的列上，但是这些值（表示true或false的值）的许多实例-基本上都是选择性（selectivity）低的列。</p>
+<h2 id="索引是怎么提升性能的？"><a href="#索引是怎么提升性能的？" class="headerlink" title="索引是怎么提升性能的？"></a>索引是怎么提升性能的？</h2><p>因为索引基本上是用来存储列值的数据结构，这使查找这些列值更加快速。如果索引使用最常用的数据结构-B-Tree-那么其中的数据是有序的。有序的列值可以极大的提升性能。下面解释原因。</p>
+<p>假设我们在 Employee_Name这一列上创建一个B-Tree索引。这意味着当我们用之前的SQL查找姓名是‘Jesus’的雇员时，不需要再扫描全表。而是用索引查找去查找名字为‘Jesus’的雇员，因为索引已经按照按字母顺序排序。索引已经排序意味着查询一个名字会快很多，因为名字少字母为‘J’的员工都是排列在一起的。另外重要的一点是，索引同时存储了表中相应行的指针以获取其他列的数据。</p>
+<h2 id="数据库索引里究竟存的是什么？"><a href="#数据库索引里究竟存的是什么？" class="headerlink" title="数据库索引里究竟存的是什么？"></a>数据库索引里究竟存的是什么？</h2><p>你现在已经知道数据库索引是创建在表的某列上的，并且存储了这一列的所有值。但是，需要理解的重点是数据库索引并不存储这个表中其他列（字段）的值。举例来说，如果我们在Employee_Name列创建索引，那么列Employee_Age和Employee_Address上的值并不会存储在这个索引当中。如果我们确实把其他所有字段也存储在个这个索引中，那就成了拷贝一整张表做为索引-这样会占用太大的空间而且会十分低效。</p>
+<h2 id="索引存储了指向表中某一行的指针"><a href="#索引存储了指向表中某一行的指针" class="headerlink" title="索引存储了指向表中某一行的指针"></a>索引存储了指向表中某一行的指针</h2><p>如果我们在索引里找到某一条记录作为索引的列的值，如何才能找到这一条记录的其它值呢？这是很简单 - 数据库索引同时存储了指向表中的相应行的指针。指针是指一块内存区域， 该内存区域记录的是对硬盘上记录的相应行的数据的引用。因此，索引中除了存储列的值，还存储着一个指向在行数据的索引。也就是说，索引中的Employee_Name这列的某个值（或者节点）可以描述为 (“Jesus”, 0x82829)， 0x82829 就是包含 “Jesus”那行数据在硬盘上的地址。如果没有这个引用，你就只能访问到一个单独的值（“Jesus”），而这样没有意义，因为你不能获取这一行记录的employee的其他值-例如地址（address）和年龄（age）。</p>
+<h2 id="数据库怎么知道什么时候使用索引？"><a href="#数据库怎么知道什么时候使用索引？" class="headerlink" title="数据库怎么知道什么时候使用索引？"></a>数据库怎么知道什么时候使用索引？</h2><p>当这个SQL （SELECT * FROM Employee WHERE Employee_Name = ‘Jesus’ ）运行时，数据库会检查在查询的列上是否有索引。假设Employee_Name列上确实创建了索引，数据库会接着检查使用这个索引做查询是否合理 - 因为有些场景下，使用索引比起全表扫描会更加低效。如果想要了解更多这些场景，请阅读这篇文章：<a href="https://www.programmerinterview.com/index.php/database-sql/selectivity-in-sql-databases/" target="_blank" rel="noopener">Selectivity in SQL</a></p>
+<h2 id="你能强制数据库使用索引吗？"><a href="#你能强制数据库使用索引吗？" class="headerlink" title="你能强制数据库使用索引吗？"></a>你能强制数据库使用索引吗？</h2><p>通常来说， 你不会告诉数据库什么时候使用索引 - 数据库自己决定。然而，值得注意的是在大多数数据库中（像Oracle 和 MYSQL）， 你实际上可以制订你想要使用的索引。</p>
+<h2 id="如何在使用SQL创建索引："><a href="#如何在使用SQL创建索引：" class="headerlink" title="如何在使用SQL创建索引："></a>如何在使用SQL创建索引：</h2><p>之前的例子中，在Employee_Name列上创建索引的SQL如下：</p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">INDEX</span> name_index</span><br><span class="line"><span class="keyword">ON</span> Employee (Employee_Name)</span><br></pre></td></tr></table></figure>
+<h2 id="如何创建联合索引"><a href="#如何创建联合索引" class="headerlink" title="如何创建联合索引"></a>如何创建联合索引</h2><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">INDEX</span> name_index</span><br><span class="line"><span class="keyword">ON</span> Employee (Employee_Name, Employee_Age)</span><br></pre></td></tr></table></figure>
+<h2 id="把数据库索引类比成什么比较好呢"><a href="#把数据库索引类比成什么比较好呢" class="headerlink" title="把数据库索引类比成什么比较好呢?"></a>把数据库索引类比成什么比较好呢?</h2><p>一个非常好的类比是把数据库索引看作是书的索引。如果你有一本关于狗的书，你想要找关于‘黄金猎犬’的那部分。当你可以通过在书背的索引找到哪几页有关于‘黄金猎犬’信息的时候，你为什么要翻完正本书 - 这相当于数据库中的全表扫描。同样的，就像一本书的索引包含页码一样，数据库的索引包含了指针，指向你在SQL中想要查询的值所在的行。</p>
+<h2 id="使用数据库索引会有什么代价？"><a href="#使用数据库索引会有什么代价？" class="headerlink" title="使用数据库索引会有什么代价？"></a>使用数据库索引会有什么代价？</h2><p>那么，使用数据库索引有什么缺点呢？其一，索引会占用空间 - 你的表越大，索引占用的空间越大。其二，性能损失（主要值更新操作），当你在表中添加、删除或者更新行数据的时候， 在索引中也会有相同的操作。记住：建立在某列（或多列）索引需要保存该列最新的数据。</p>
+<p><strong>基本原则是只如果表中某列在查询过程中使用的非常频繁，那就在该列上创建索引。</strong><br>原文链接：<a href="http://www.programmerinterview.com/index.php/database-sql/what-is-an-index/" target="_blank" rel="noopener">http://www.programmerinterview.com/index.php/database-sql/what-is-an-index/</a></p>
+
+        
+        <div id="comment-container">
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/5878104897">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/dqccoding">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+</html>
