@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="sometimes code， sometimes photograph">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        Java面试基础 - CodingHJ的博客 | CodingHJ&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> sometimes code， sometimes photograph </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>HJ</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java面试题—Java基础"><span class="toc-text">Java面试题—Java基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、说说-amp-和-amp-amp-的区别。"><span class="toc-text">1、说说&amp;和&amp;&amp;的区别。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、”-”和equals方法究竟有什么区别？"><span class="toc-text">2、”==”和equals方法究竟有什么区别？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Integer与int的区别"><span class="toc-text">3.Integer与int的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Math-round-11-5-等於多少-Math-round-11-5-等於多少"><span class="toc-text">4.Math.round(11.5)等於多少? Math.round(-11.5)等於多少?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-下面的代码有什么不妥之处"><span class="toc-text">5.下面的代码有什么不妥之处?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-请说出作用域public，private，protected，以及不写时的区别"><span class="toc-text">6.请说出作用域public，private，protected，以及不写时的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-抽象类中可以包含静态方法，接口中不能包含静态方法"><span class="toc-text">7.抽象类中可以包含静态方法，接口中不能包含静态方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-匿名内部类必须实现一个接口或继承其他类"><span class="toc-text">8.匿名内部类必须实现一个接口或继承其他类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-String-str-new-String-“xyz”-会创建几个对象？"><span class="toc-text">9.String str = new String(“xyz”) 会创建几个对象？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10"><span class="toc-text">10.</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> sometimes code， sometimes photograph </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        Java面试基础
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2018-09-13 23:58:35</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#java 面试题 基础" title="java 面试题 基础">java 面试题 基础</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h1 id="Java面试题—Java基础"><a href="#Java面试题—Java基础" class="headerlink" title="Java面试题—Java基础"></a>Java面试题—Java基础</h1><p>&#8195;基础部分的顺序：基本语法，类相关的语法，内部类的语法，继承相关的语法，异常的语法，线程的语法，集合的语法，io 的语法，虚拟机方面的语法。</p>
+<h2 id="1、说说-amp-和-amp-amp-的区别。"><a href="#1、说说-amp-和-amp-amp-的区别。" class="headerlink" title="1、说说&amp;和&amp;&amp;的区别。"></a>1、说说&amp;和&amp;&amp;的区别。</h2><p>&#8195;&amp;和&amp;&amp;都可以用作逻辑与的运算符，表示逻辑与（and），当运算符两边的表达式的结果都为true时，整个运算结果才为true，否则，只要有一方为false，则结果为false。</p>
+<p>&#8195;&amp;&amp;还具有短路的功能，即如果第一个表达式为false，则不再计算第二个表达式，例如，对于if(str != null &amp;&amp; !str.equals(“”))表达式，当str为null时，后面的表达式不会执行，所以不会出现NullPointerException如果将&amp;&amp;改为&amp;，则会抛出NullPointerException异常。If(x=33 &amp; ++y&gt;0) y会增长，If(x=33 &amp;&amp; ++y&gt;0)不会增长</p>
+<p>&#8195;&amp;还可以用作位运算符，当&amp;操作符两边的表达式不是boolean类型时，&amp;表示按位与操作，我们通常使用0x0f来与一个整数进行&amp;运算，来获取该整数的最低4个bit位，例如，0x31 &amp; 0x0f的结果为0x01。 </p>
+<p>&#8195;备注：这道题先说两者的共同点，再说出&amp;&amp;和&amp;的特殊之处，并列举一些经典的例子来表明自己理解透彻深入、实际经验丰富。 </p>
+<h2 id="2、”-”和equals方法究竟有什么区别？"><a href="#2、”-”和equals方法究竟有什么区别？" class="headerlink" title="2、”==”和equals方法究竟有什么区别？"></a>2、”==”和equals方法究竟有什么区别？</h2><p>&#8195;（单独把一个东西说清楚，然后再说清楚另一个，这样，它们的区别自然就出来了，混在一起说，则很难说清楚）</p>
+<p>&#8195;\==操作符专门用来比较两个变量的值是否相等，也就是用于比较变量所对应的内存中所存储的数值是否相同，要比较两个基本类型的数据或两个引用变量是否相等，只能用\==操作符。</p>
+<p>&#8195;如果一个变量指向的数据是对象类型的，那么，这时候涉及了两块内存，对象本身占用一块内存（堆内存），变量也占用一块内存，例如Objet obj = new Object();变量obj是一个内存，new Object()是另一个内存，此时，变量obj所对应的内存中存储的数值就是对象占用的那块内存的首地址。对于指向对象类型的变量，如果要比较两个变量是否指向同一个对象，即要看这两个变量所对应的内存中的数值是否相等，这时候就需要用\==操作符进行比较。</p>
+<p>&#8195;equals方法是用于比较两个独立对象的内容是否相同，就好比去比较两个人的长相是否相同，它比较的两个对象是独立的。例如，对于下面的代码：</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">String</span> a=<span class="keyword">new</span> <span class="keyword">String</span>(<span class="string">"foo"</span>);</span><br><span class="line"><span class="keyword">String</span> b=<span class="keyword">new</span> <span class="keyword">String</span>(<span class="string">"foo"</span>);</span><br></pre></td></tr></table></figure>
+<p>&#8195;两条new语句创建了两个对象，然后用a,b这两个变量分别指向了其中一个对象，这是两个不同的对象，它们的首地址是不同的，即a和b中存储的数值是不相同的，所以，表达式a\==b将返回false，而这两个对象中的内容是相同的，所以，表达式a.equals(b)将返回true。</p>
+<p>&#8195;在实际开发中，我们经常要比较传递进行来的字符串内容是否等，例如，String input = …;input.equals(“quit”)，许多人稍不注意就使用==进行比较了，这是错误的，随便从网上找几个项目实战的教学视频看看，里面就有大量这样的错误。<strong>记住，字符串的比较基本上都是使用equals方法。</strong></p>
+<p>&#8195;如果一个类没有自己定义equals方法，那么它将继承Object类的equals方法，Object类的equals方法的实现代码如下：</p>
+<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object o)</span></span>&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">this</span>==o;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&#8195;这说明，如果一个类没有自己定义equals方法，它默认的equals方法（从Object 类继承的）就是使用\==操作符，也是在比较两个变量指向的对象是否是同一对象，这时候使用equals和使用\==会得到同样的结果，如果比较的是两个独立的对象则总返回false。<strong>如果你编写的类希望能够比较该类创建的两个实例对象的内容是否相同，那么你必须覆盖equals方法，由你自己写代码来决定在什么情况即可认为两个对象的内容是相同的。</strong></p>
+<h2 id="3-Integer与int的区别"><a href="#3-Integer与int的区别" class="headerlink" title="3.Integer与int的区别"></a>3.Integer与int的区别</h2><p>&#8195;int是java提供的8种原始数据类型之一。Java为每个原始类型提供了封装类，Integer是java为int提供的封装类。int的默认值为0，而Integer的默认值为null，即Integer可以区分出未赋值和值为0的区别，int则无法表达出未赋值的情况，例如，要想表达出没有参加考试和考试成绩为0的区别，则只能使用Integer。在JSP开发中，Integer的默认为null，所以用el表达式在文本框中显示时，值为空白字符串，而int默认的默认值为0，所以用el表达式在文本框中显示时，结果为0，所以，int不适合作为web层的表单数据的类型。</p>
+<p>&#8195;另外，Integer提供了多个与整数相关的操作方法，例如，将一个字符串转换成整数，Integer中还定义了表示整数的最大值和最小值的常量。</p>
+<h2 id="4-Math-round-11-5-等於多少-Math-round-11-5-等於多少"><a href="#4-Math-round-11-5-等於多少-Math-round-11-5-等於多少" class="headerlink" title="4.Math.round(11.5)等於多少? Math.round(-11.5)等於多少?"></a>4.Math.round(11.5)等於多少? Math.round(-11.5)等於多少?</h2><p>&#8195;Math类中提供了三个与取整有关的方法：ceil、floor、round，这些方法的作用与它们的英文名称的含义相对应，例如，ceil的英文意义是天花板，该方法就表示向上取整，Math.ceil(11.3)的结果为12,Math.ceil(-11.3)的结果是-11；floor的英文意义是地板，该方法就表示向下取整，Math. floor (11.6)的结果为11,Math. floor(-11.6)的结果是-12；<strong>最难掌握的是round方法，它表示“四舍五入”，算法为Math.floor(x+0.5)，即将原来的数字加上0.5后再向下取整，所以，Math.round(11.5)的结果为12，Math.round(-11.5)的结果为-11。</strong></p>
+<h2 id="5-下面的代码有什么不妥之处"><a href="#5-下面的代码有什么不妥之处" class="headerlink" title="5.下面的代码有什么不妥之处?"></a>5.下面的代码有什么不妥之处?</h2><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> <span class="keyword">if</span>(username.<span class="keyword">equals</span>(“wpc”))&#123;&#125;</span><br><span class="line"></span><br><span class="line"> <span class="number">2.</span>  <span class="keyword">int</span>  x = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> x==<span class="number">1</span>?<span class="literal">true</span>:<span class="literal">false</span>;</span><br></pre></td></tr></table></figure>
+<p>回答问题一：如果username初值为null在编译的时候会有警告，运行的时候抛出异常;如果username写在后面即使初值为null也不会抛异常。如下：</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">method1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		String username = <span class="literal">null</span>;</span><br><span class="line"> </span><br><span class="line">		<span class="comment">// 第一个if如果username在前面,若为null的话会报空指针异常</span></span><br><span class="line"><span class="comment">//		if (username.equals("wpc")) &#123;// 如果username在编译时发现真的是null就会给出警告提示信息</span></span><br><span class="line"><span class="comment">//			System.out.println("wpc");</span></span><br><span class="line"><span class="comment">//		&#125;</span></span><br><span class="line"> </span><br><span class="line">		<span class="comment">// 如果放后面即使没有赋初值，运行时也不会报空指针异常</span></span><br><span class="line">		<span class="keyword">if</span> (<span class="string">"wpc"</span>.<span class="keyword">equals</span>(username)) &#123;</span><br><span class="line">			System.<span class="keyword">out</span>.println(<span class="string">"wpc"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>回答问题二：如果要返回boolean, 那么可以直接return x\==1, (x==1这个表达式本来就返回boolean)</p>
+<h2 id="6-请说出作用域public，private，protected，以及不写时的区别"><a href="#6-请说出作用域public，private，protected，以及不写时的区别" class="headerlink" title="6.请说出作用域public，private，protected，以及不写时的区别"></a>6.请说出作用域public，private，protected，以及不写时的区别</h2><p>这四个作用域的可见范围如下表所示。</p>
+<p>说明：如果在修饰的元素上面没有写任何访问修饰符，则表示friendly。<br>作用域 | 当前类 | 同一package | 子孙类 |其他package<br>—|—|—|—|—<br>public |   √   |   √    |     √   |    √<br>protected | √  |   √    |      √  |   ×<br>friendly |  √  |   √    |      ×  |   ×<br>private  |  √  |   ×    |      ×  |    × </p>
+<h2 id="7-抽象类中可以包含静态方法，接口中不能包含静态方法"><a href="#7-抽象类中可以包含静态方法，接口中不能包含静态方法" class="headerlink" title="7.抽象类中可以包含静态方法，接口中不能包含静态方法"></a>7.抽象类中可以包含静态方法，接口中不能包含静态方法</h2><p>&#8195;抽象类总可以有抽象方法和非抽象方法，如果抽象类中定义了静态非抽象方法，可以通过类名.静态非抽象方法名调用这个方法。但是在抽象类中不能有静态的抽象方法，抽象方法没有方法体，没有被分配内存，所以如果抽象方法为静态的，没法调用。接口中同理不能有静态抽象方法。</p>
+<p>&#8195;但是抽象类中可以包含静态方法，接口中只能包含public abstract方法。</p>
+<p>延伸：<strong>static变量</strong>在项目启动时就分配内存，直到程序结束释放内存<strong>。static方法</strong>只有在调用的时候才开始分配内存，因为static方法肯定在类里面，并没有实例化类，所以只有在调用static方法的时候才开始分配内存。</p>
+<h2 id="8-匿名内部类必须实现一个接口或继承其他类"><a href="#8-匿名内部类必须实现一个接口或继承其他类" class="headerlink" title="8.匿名内部类必须实现一个接口或继承其他类"></a>8.匿名内部类必须实现一个接口或继承其他类</h2><p>匿名内部类也就是没有名字的内部类</p>
+<p>正因为没有名字，所以匿名内部类只能使用一次，它通常用来简化代码编写</p>
+<p>但使用匿名内部类还有个前提条件：<strong>必须继承一个父类或实现一个接口</strong><br>Demo1:不是用匿名类来实现抽象方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Child</span> <span class="keyword">extends</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"eat something"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Person p = <span class="keyword">new</span> Child();</span><br><span class="line">        p.eat();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看到，我们用Child继承了Person类，然后实现了Child的一个实例，将其向上转型为Person类的引用</p>
+<p>但是，如果此处的Child类只使用一次，那么将其编写为独立的一个类岂不是很麻烦？</p>
+<p>这个时候就引入了匿名内部类</p>
+<p>Demo2：匿名内部类的基本实现</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title">Person</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">eat</span>(<span class="params"></span>)</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Demo</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</span><br><span class="line">        Person p = <span class="keyword">new</span> Person() &#123;</span><br><span class="line">            @Override  <span class="comment">//此处方法重载 说明是实现父类  即内部类可以继承其他类 而且是必须</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                System.<span class="keyword">out</span>.println(<span class="string">"eat something"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        p.eat();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看到，我们直接将抽象类Person中的方法在大括号中实现了</p>
+<p>这样便可以省略一个类的书写</p>
+<p>并且，匿名内部类还能用于接口上</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title">Person</span> &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span>(<span class="params"></span>)</span>;</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Demo</span> &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</span><br><span class="line">            Person p = <span class="keyword">new</span> Person() &#123;</span><br><span class="line">                @Override  <span class="comment">//此处方法重写 说明是实现父类  即内部类可以实现其他类 而且是必须</span></span><br><span class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                    System.<span class="keyword">out</span>.println(<span class="string">"eat something"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;;</span><br><span class="line">            p.eat();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>由上面的例子可以看出，只要一个类是抽象的或是一个接口，那么其子类中的方法都可以使用匿名内部类来实现</p>
+<p><strong>最常用的情况就是在多线程的实现上，因为要实现多线程必须继承Thread类或是实现Runnable接口</strong></p>
+<h2 id="9-String-str-new-String-“xyz”-会创建几个对象？"><a href="#9-String-str-new-String-“xyz”-会创建几个对象？" class="headerlink" title="9.String str = new String(“xyz”) 会创建几个对象？"></a>9.String str = new String(“xyz”) 会创建几个对象？</h2><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">public</span> class <span class="keyword">StringTest </span>&#123;</span><br><span class="line">        public static void main(<span class="keyword">String[] </span>args)&#123;</span><br><span class="line">            //在常量池中创建对象<span class="string">"Hello"</span>,<span class="built_in">s1</span>指向这个对象</span><br><span class="line">            <span class="keyword">String </span><span class="built_in">s1</span>=<span class="string">"Hello"</span><span class="comment">;</span></span><br><span class="line">            <span class="keyword">String </span><span class="built_in">s2</span>=<span class="string">"Hello"</span><span class="comment">;</span></span><br><span class="line">            //若常量池中存在<span class="string">"Hello"</span>对象，则不会再在常量池中创建该对象；</span><br><span class="line">            //若常量池中不存在<span class="string">"Hello"</span>对象，则会先在常量池中创建<span class="string">"Hello"</span>对象</span><br><span class="line">            //接着执行new <span class="keyword">String("Hello");又会在内存中创建一个对象</span></span><br><span class="line"><span class="keyword"> </span>           <span class="keyword">String </span><span class="built_in">s3</span><span class="symbol">=new</span> <span class="keyword">String("Hello");</span></span><br><span class="line"><span class="keyword"> </span>    </span><br><span class="line">            System.out.println(<span class="string">"s1和s2 引用地址是否相同："</span>+(<span class="built_in">s1</span> == <span class="built_in">s2</span>))<span class="comment">;</span></span><br><span class="line">            System.out.println(<span class="string">"s1和s2 值是否相同："</span>+<span class="built_in">s1</span>.equals(<span class="built_in">s2</span>))<span class="comment">;</span></span><br><span class="line">     </span><br><span class="line">            System.out.println(<span class="string">"s1和s3 引用地址是否相同："</span>+(<span class="built_in">s1</span> == <span class="built_in">s3</span>))<span class="comment">;</span></span><br><span class="line">            System.out.println(<span class="string">"s1和s3 值是否相同："</span>+<span class="built_in">s1</span>.equals(<span class="built_in">s3</span>))<span class="comment">;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<pre><code>输出结果：
+
+s1和s2 引用地址是否相同：true
+s1和s2 值是否相同：true
+s1和s3 引用地址是否相同：false
+s1和s3 值是否相同：true
+</code></pre><p>分析：”==”是判断两个对象的值（s1、s2、s3的值即为所指向的对象在内存中的地址），equals()方法则是判断引用对象所指向的对象的值，即本例中常量池中和内存中”Hello”对象的值。</p>
+<h2 id="10"><a href="#10" class="headerlink" title="10."></a>10.</h2>
+        
+        <div id="comment-container">
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/5878104897">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/dqccoding">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+</html>
