@@ -160,7 +160,48 @@
 <figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">method1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		String username = <span class="literal">null</span>;</span><br><span class="line"> </span><br><span class="line">		<span class="comment">// 第一个if如果username在前面,若为null的话会报空指针异常</span></span><br><span class="line"><span class="comment">//		if (username.equals("wpc")) &#123;// 如果username在编译时发现真的是null就会给出警告提示信息</span></span><br><span class="line"><span class="comment">//			System.out.println("wpc");</span></span><br><span class="line"><span class="comment">//		&#125;</span></span><br><span class="line"> </span><br><span class="line">		<span class="comment">// 如果放后面即使没有赋初值，运行时也不会报空指针异常</span></span><br><span class="line">		<span class="keyword">if</span> (<span class="string">"wpc"</span>.<span class="keyword">equals</span>(username)) &#123;</span><br><span class="line">			System.<span class="keyword">out</span>.println(<span class="string">"wpc"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 <p>回答问题二：如果要返回boolean, 那么可以直接return x\==1, (x==1这个表达式本来就返回boolean)</p>
 <h2 id="6-请说出作用域public，private，protected，以及不写时的区别"><a href="#6-请说出作用域public，private，protected，以及不写时的区别" class="headerlink" title="6.请说出作用域public，private，protected，以及不写时的区别"></a>6.请说出作用域public，private，protected，以及不写时的区别</h2><p>这四个作用域的可见范围如下表所示。</p>
-<p>说明：如果在修饰的元素上面没有写任何访问修饰符，则表示friendly。<br>作用域 | 当前类 | 同一package | 子孙类 |其他package<br>—|—|—|—|—<br>public |   √   |   √    |     √   |    √<br>protected | √  |   √    |      √  |   ×<br>friendly |  √  |   √    |      ×  |   ×<br>private  |  √  |   ×    |      ×  |    × </p>
+<p>说明：如果在修饰的元素上面没有写任何访问修饰符，则表示friendly。</p>
+<table>
+<thead>
+<tr>
+<th>作用域</th>
+<th>当前类</th>
+<th>同一package</th>
+<th>子孙类</th>
+<th>其他package</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√ </td>
+</tr>
+<tr>
+<td>protected</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>× </td>
+</tr>
+<tr>
+<td>friendly</td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+<td>× </td>
+</tr>
+<tr>
+<td>private</td>
+<td>√</td>
+<td>×</td>
+<td>×</td>
+<td>× </td>
+</tr>
+</tbody>
+</table>
 <h2 id="7-抽象类中可以包含静态方法，接口中不能包含静态方法"><a href="#7-抽象类中可以包含静态方法，接口中不能包含静态方法" class="headerlink" title="7.抽象类中可以包含静态方法，接口中不能包含静态方法"></a>7.抽象类中可以包含静态方法，接口中不能包含静态方法</h2><p>&#8195;抽象类总可以有抽象方法和非抽象方法，如果抽象类中定义了静态非抽象方法，可以通过类名.静态非抽象方法名调用这个方法。但是在抽象类中不能有静态的抽象方法，抽象方法没有方法体，没有被分配内存，所以如果抽象方法为静态的，没法调用。接口中同理不能有静态抽象方法。</p>
 <p>&#8195;但是抽象类中可以包含静态方法，接口中只能包含public abstract方法。</p>
 <p>延伸：<strong>static变量</strong>在项目启动时就分配内存，直到程序结束释放内存<strong>。static方法</strong>只有在调用的时候才开始分配内存，因为static方法肯定在类里面，并没有实例化类，所以只有在调用static方法的时候才开始分配内存。</p>
